@@ -136,50 +136,73 @@ class SearchScreen extends StatelessWidget {
                             fit: BoxFit.cover,
                             image: AssetImage('assets/images/sit.jpg'))),
                   ),
-                  const Gap(10),
+                  const Gap(12),
                   Text(
                       "20% discount on business class tickets from Airline On International",
-                      style: Styles.textStyle.copyWith(color: Colors.black)),
+                      style:
+                          Styles.headlineStyle2.copyWith(color: Colors.black)),
                   const Gap(15),
                 ]),
               ),
               // Right Section
               Column(
                 children: [
-                  // Card 2 (top right)
-                  Container(
-                    // margin: const EdgeInsets.only(top: 16),
-                    height: AppLayout.getHeight(size.height * 0.18),
-                    width: AppLayout.getWidth(size.width * 0.40),
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey.shade200,
-                              blurRadius: 20,
-                              spreadRadius: 5)
-                        ],
-                        color: const Color(0xFF3AB8B8),
-                        borderRadius: BorderRadius.circular(24)),
-                    // width: size.width * 0.6,
-                    child: Column(children: [
-                      Text("Discount\nFor Survey",
-                          style: Styles.headlineStyle2
-                              .copyWith(color: Colors.white, fontSize: 20)),
-                      Text(
-                          // "Take the survey about our services and get a discount",
-                          "Take the survey about ",
-                          style: Styles.textStyle.copyWith(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal)),
-                    ]),
+                  Stack(
+                    children: [
+                      // Card 2 (top right)
+                      Container(
+                        // margin: const EdgeInsets.only(top: 16),
+                        height: AppLayout.getHeight(size.height * 0.20),
+                        width: AppLayout.getWidth(size.width * 0.40),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: AppLayout.getHeight(15),
+                            vertical: AppLayout.getHeight(15)),
+                        decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.shade200,
+                                  blurRadius: 20,
+                                  spreadRadius: 5)
+                            ],
+                            color: const Color(0xFF3AB8B8),
+                            borderRadius: BorderRadius.circular(24)),
+                        // width: size.width * 0.6,
+                        child: Column(children: [
+                          Text("Discount\nFor Survey",
+                              style: Styles.headlineStyle2
+                                  .copyWith(color: Colors.white, fontSize: 20)),
+                          Gap(AppLayout.getHeight(10)),
+                          Text(
+                              // "Take the survey about our services and get a discount",
+                              "Take the survey about our services and ",
+                              style: Styles.textStyle.copyWith(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.normal)),
+                        ]),
+                      ),
+                      Positioned(
+                        right: -45,
+                        top: -40,
+                        child: // Circle for card 2
+                            Container(
+                          padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.transparent,
+                              border: Border.all(
+                                  width: 18, color: const Color(0xFF189999))),
+                        ),
+                      )
+                    ],
                   ),
+
                   Gap(AppLayout.getHeight(size.height * 0.02)),
                   // card 3 (bottom right)
                   Container(
                     padding: const EdgeInsets.all(15),
                     width: AppLayout.getWidth(size.width * 0.40),
-                    height: AppLayout.getHeight(size.height * 0.25),
+                    height: AppLayout.getHeight(size.height * 0.23),
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
@@ -187,16 +210,20 @@ class SearchScreen extends StatelessWidget {
                               blurRadius: 20,
                               spreadRadius: 5)
                         ],
-                        color: Colors.orange.shade900,
+                        color: const Color(0xFFEC6545),
                         borderRadius: BorderRadius.circular(24)),
                     // width: size.width * 0.6,
                     child: Column(children: [
                       Text("Take Love",
                           style: Styles.headlineStyle2
                               .copyWith(color: Colors.white)),
-                      Text("Emoticons",
-                          style:
-                              Styles.textStyle.copyWith(color: Colors.black)),
+                      Gap(AppLayout.getHeight(15)),
+                      RichText(
+                          text: const TextSpan(children: [
+                        TextSpan(text: '😍', style: TextStyle(fontSize: 30)),
+                        TextSpan(text: '🥰', style: TextStyle(fontSize: 40)),
+                        TextSpan(text: '😘', style: TextStyle(fontSize: 30))
+                      ]))
                     ]),
                   ),
                 ],
